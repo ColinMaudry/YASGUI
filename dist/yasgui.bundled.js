@@ -45581,7 +45581,7 @@ YASQE.defaults = $.extend(true, {}, YASQE.defaults, {
 		 * @property sparql.endpoint
 		 * @type String|function
 		 */
-		endpoint: "http://dbpedia.org/sparql",
+		endpoint: "http://www.data.maudry.com:3030/datagouvfr/sparql",
 		/**
 		 * Request method via which to access SPARQL endpoint
 		 *
