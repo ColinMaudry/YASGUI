@@ -39,6 +39,13 @@
         <div class="jumbotron ">
             <div id="editor"></div>
         </div>
+			<a target="_blank" href="https://www.lucidchart.com/documents/view/6011b6e0-6a85-413a-8279-0588b0f10992">The data model</a>
+			<h3>Useful queries</h3>
+			<ul>
+				<li><a href="http://www.data.maudry.com/query/#query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX+foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX+dcat%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fdcat%23%3E%0APREFIX+dgfr%3A+%3Chttp%3A%2F%2Fcolin.maudry.com%2Fontologies%2Fdgfr%23%3E%0Aselect+distinct+%3Fgraph+where+%7B%0A++graph+%3Fgraph+%7B%0A++%3Fs+%3Fp+%3Fo%0A++%7D%0A%7D%0A&contentTypeConstruct=text%2Fturtle&contentTypeSelect=application%2Fsparql-results%2Bjson&endpoint=http%3A%2F%2Fwww.data.maudry.com%3A3030%2Fdatagouvfr%2Fsparql&requestMethod=POST&tabTitle=Query&outputFormat=table">List of the named graphs</a></li>
+				<li><a href="http://www.data.maudry.com/query/#query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX+foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX+dcat%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fdcat%23%3E%0APREFIX+dgfr%3A+%3Chttp%3A%2F%2Fcolin.maudry.com%2Fontologies%2Fdgfr%23%3E%0Aselect+distinct+%3Fclass+(count(%3Fthing)+as+%3FnumInstances)+where+%7B%0A++graph+%3Chttp%3A%2F%2Fwww.data.maudry.com%3E+%7B%0A++%3Fthing+a+%3Fclass+.%0A++%7D%0A%7D%0Agroup+by+%3Fclass%0Aorder+by+%3Fclass%0A%0A&contentTypeConstruct=text%2Fturtle&contentTypeSelect=application%2Fsparql-results%2Bjson&endpoint=http%3A%2F%2Fwww.data.maudry.com%3A3030%2Fdatagouvfr%2Fsparql&requestMethod=POST&tabTitle=Query&outputFormat=table">List of classes, with the number of instances</a></li>
+				<li><a href="http://www.data.maudry.com/query/#query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX+foaf%3A+%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0APREFIX+dcat%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fdcat%23%3E%0APREFIX+dgfr%3A+%3Chttp%3A%2F%2Fcolin.maudry.com%2Fontologies%2Fdgfr%23%3E%0ASELECT+%3Forganisation+(count(%3Fdataset)+as+%3FnombreDatasets)+(count(%3Fdistribution)+as+%3FnombreRessources)+(sum(%3Fdownloads)+as+%3FnombreT%C3%A9l%C3%A9chargements)+WHERE+%7B%0A++graph+%3Chttp%3A%2F%2Fwww.data.maudry.com%3E+%7B%0A++%3ForganizationUri+a+foaf%3AOrganization+%3B%0A++++++++++++++++rdfs%3Alabel+%3Forganisation+%3B%0A++++++++++++++++dgfr%3Apublished+%3Fdataset+.%0A++++%3Fdataset+a+dcat%3ADataset+%3B%0A++++++%09%09%09dcat%3Adistribution+%3Fdistribution+.%0A++++%3Fdistribution+dgfr%3Adownloads+%3Fdownloads+.%0A++%7D%0A%7D+%0Agroup+by+%3Forganisation%0Aorder+by+desc(%3FnombreT%C3%A9l%C3%A9chargements)%0Alimit+10%0A&contentTypeConstruct=text%2Fturtle&contentTypeSelect=application%2Fsparql-results%2Bjson&endpoint=http%3A%2F%2Fwww.data.maudry.com%3A3030%2Fdatagouvfr%2Fsparql&requestMethod=POST&tabTitle=Query&outputFormat=table">List of the organizations, with their number of datasets and distributions, sorted by the total number of downloads</a></li>
+			</ul>
 			<h3>The data model</h3>
 			<div style="width: 90%; height: 600px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width: 90%; height: 600px;" src="https://www.lucidchart.com/documents/embeddedchart/6011b6e0-6a85-413a-8279-0588b0f10992" id="nEaW1vQKUiy0"></iframe></div>
     </div>
@@ -53,7 +60,6 @@
     <script src="doc/doc.min.js"></script>
     <script type="text/javascript">
         var yasgui = YASGUI(document.getElementById("editor"));
-			var endpoint = "http://www.data.maudry.com:3030/datagouvfr/sparql"
     </script>
 </body>
 
